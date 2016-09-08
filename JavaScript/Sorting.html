@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<script type="text/javascript">
+		function read(){
+			var limit;		
+			limit = window.prompt("Enter limit:");
+			document.writeln("Limit: "+limit+" <br>");
+		//	
+			var i=0;
+			document.writeln("<br><br><br>Input List:");
+			var newList = new Array(limit);
+	
+			while(i<limit){
+
+				newList[i]= window.prompt("Enter input:");
+
+				document.writeln(newList[i]+" ");
+				i++;
+			} 
+
+			var choice;
+			choice = window.prompt("1....Ascending Order <br> 2....descending Order <br/> Enter Choice:");
+
+			if(choice==1){
+				newList.sort();
+			}
+			else if(choice==2){
+				newList.sort();
+				newList.reverse();
+			}
+			else{
+				document.writeln("<br><br>Sorting failed... wrong choice..!");
+
+			}
+
+			i=0;
+			document.writeln("<br><br>Sorted List:");
+
+			while(i<limit){
+				document.writeln(newList[i]+" ");
+				i++;
+			} 
+
+		}
+
+	</script>
+</head>
+
+<body onload="read()">
+	</body>
+
+</html>
