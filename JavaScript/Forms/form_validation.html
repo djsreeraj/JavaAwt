@@ -1,0 +1,114 @@
+<html>
+<head>
+<h3 align="center">FORM VALIDATION </h3>
+<script type="text/javascript">
+	function validate()
+	{
+		var name=document.getElementById("name").value;
+		if(name=="")
+                                      {
+			alert("Name field is Empty..!");
+			return false;
+			
+		     }
+		else
+                                      {
+			for(var i=0;i<name.length;i++)
+                                                           {
+				if(!(name.charAt(i)>='a' && name.charAt(i)<='z')||(name.charAt(i)>='A' && name.charAt(i)<='Z')){
+					alert("Enter characters only");
+					return false;
+
+				}
+			
+		    }
+	}
+		if(name.length<5)
+                                            {
+			alert("Name should be greater than 5");
+			return false;
+
+		       }
+		var age=document.getElementById("age").value;
+		if(age=="")
+                                                    {
+			alert("Age field is empty");
+			return false;
+			
+		                }
+		else
+                                                   {
+			for(var i=0;i<age.length;i++){
+				if(!(age.charAt(i)>='0' && age.charAt(i)<='9'))
+                                                          {
+					alert("Enter numbers only");
+					return false;
+
+			}
+			
+			}
+		}
+		if(age<=1 || age>=100){
+			alert("Enter correct age");
+			return false;
+
+		}
+		var adress=document.getElementById("add").value;
+		if(adress==""){
+			alert("Address field is empty");
+			return false;
+			
+		}
+		var mobile=document.getElementById("phone").value;
+		if(mobile==""){
+			alert("Phone no field is empty");
+			return false;
+			
+		}
+		else{
+			for(var i=0;i<mobile.length;i++){
+				if(!(mobile.charAt(i)>='0' && mobile.charAt(i)<='9')){
+					alert("Enter numbers only");
+					return false;
+
+				}
+			
+			}
+		}
+		if(mobile.length!=10){
+			alert("Invalid mobile no.");
+			return false;
+
+		}
+		var x=document.getElementById("mail").value;
+		var atpos=x.indexOf("@");
+		var dotpos=x.lastIndexOf(".");
+		if(atpos<1 || dotpos<atpos+2)
+		{
+			alert("invalid email id");
+			return false;
+		}
+
+		
+		
+	}
+
+</script>
+</head>
+<body >
+	<form name="validation" action="form_success.html" method="post" onsubmit="return validate()">
+	<div align="center">
+	<table>
+		<tr><td>Name:</td>      <td><input type="text" id="name"></td></tr>
+		
+		<tr><td>Age:</td>     <td><input type="text" id="age"></td></tr>
+		<tr><td>Address:</td>	<td><textarea rows="3" cols="20" id="add"></textarea></td></tr>
+		<tr><td>PhoneNo:</td>   <td><input type="text" id="phone"></td></tr>
+		
+		<tr><td>Email:</td>    <td><input type="text" id="mail"></td></tr>
+		<tr><td><input type="submit"  value="submit"></td></tr>
+	</table
+	</div>
+	</form>		
+</body>
+</html>
