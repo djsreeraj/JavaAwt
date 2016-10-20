@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>spliting string</title>
+
+<script type="text/javascript">
+function split()
+{
+   var inputstring=document.getElementById("inputval").value;
+   var tokens=inputstring.split(" ");
+   document.getElementById("output").value=tokens.join("\n");
+
+
+   document.getElementById("outputstring").value=inputstring.substring(0,10);
+
+ }
+</script>
+
+</head>
+
+<body>
+
+<h3 align="center">Spliting String</h3>
+<form action="">
+<input id="inputval" type="text"/>
+<input type="button" value="split" onclick="split()"/>
+
+
+<p>the sentence split into word is<br/>
+<textarea id="output" rows="8" cols"30">
+</textarea></p>
+
+
+
+<p>the 1st 10 character are <br/>
+<input id="outputstring" type="text"/>
+</p>
+
+</form>
+</body>
+
+</html>
+
+
